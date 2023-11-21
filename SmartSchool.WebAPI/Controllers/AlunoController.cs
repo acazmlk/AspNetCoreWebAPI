@@ -33,7 +33,7 @@ namespace SmartSchool.WebAPI.Controllers
         {
             return Ok(Alunos);
         }
-            [HttpGet("byId/{id}")]
+        [HttpGet("byId/{id}")]
         public IActionResult GetById(int id)
         {
             var aluno = Alunos.FirstOrDefault(a => a.Id == id);
@@ -41,11 +41,11 @@ namespace SmartSchool.WebAPI.Controllers
             return Ok(aluno);
         }
         
-            [HttpGet("ByName")]
+        [HttpGet("ByName")]
         public IActionResult GetByName(string nome, string Sobrenome)
         {
             var aluno = Alunos.FirstOrDefault(a => a.Nome.Contains(nome) && a.Sobrenome.Contains(Sobrenome));
-            if (aluno == null) return BadRequest("O aluno não foi encontrado");
+            if (aluno == null) return BadRequest("O aluno não foi encontrado!");
             return Ok(aluno);
         }
 
@@ -55,13 +55,13 @@ namespace SmartSchool.WebAPI.Controllers
             return Ok(aluno);
         }
 
-          [HttpPut("{id}")]
+        [HttpPut("{id}")]
         public IActionResult Put(int id,Aluno aluno)
         {
             return Ok(aluno);
         }
 
-             [HttpPatch("{id}")]
+        [HttpPatch("{id}")]
         public IActionResult Patch(int id,Aluno aluno)
         {
             return Ok(aluno);
